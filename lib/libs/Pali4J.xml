@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.07</doclet-version-NOT-library-version>
+    <class>
+        <name>Pali4J.Library</name>
+        <owner>process</owner>
+        <method>
+            <name>someLibraryMethod</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+    </class>
+    <class>
+        <name>Pali4J.PaliExec</name>
+        <shortname>Pali4J</shortname>
+        <owner>process</owner>
+        <method>
+            <name>decompress</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>str</name>
+                <type>byte[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>compress</name>
+            <comment></comment>
+            <returntype>byte[]</returntype>
+            <parameter>
+                <name>str</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Lemma</name>
+            <comment></comment>
+            <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+            <parameter>
+                <name>args</name>
+                <type>java.lang.String[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FindString</name>
+            <comment></comment>
+            <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+            <parameter>
+                <name>input</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>regex</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Stem</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getNGrams</name>
+            <comment></comment>
+            <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+            <parameter>
+                <name>input</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>n</name>
+                <type>int</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>Pali4J.PaliNLP</name>
+        <owner>process</owner>
+        <method>
+            <name>lemmatize</name>
+            <comment>Lemmatizes a word using rules
+ &lt;p&gt;
+ This implementation relies on the morphological analyzer
+ and therefore is not very fast. A faster variant is the
+ dictionary lookup lemmatisation {@link #lemmatizeWithDictionary(String)}
+word: word to lemmatize
+Return type: @return:lemmata of word</comment>
+            <returntype>java.util.List</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>split</name>
+            <comment>Returns a list containing the split results
+ &lt;p&gt;
+ Each list entry is a SplitResult. SplitResult is a list of strings.
+ Each SplitResult represents
+ one possible split for the given word. Additionaly, each
+ SplitResult contains the confidence of the split being valid
+word: word to split
+depth: depth
+Return type: @return:split result</comment>
+            <returntype>java.util.List</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>depth</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>analyze</name>
+            <comment>Returns morphological analyses of a given word using rules
+word: word to analyse
+Return type: @return:possible analyses</comment>
+            <returntype>java.util.List</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>merge</name>
+            <comment>Merges two or more words according to the rules of sandhi
+ &lt;p&gt;
+ Returns possible merges
+words: words to merge
+Return type: @return:merged words</comment>
+            <returntype>java.util.List</returntype>
+            <parameter>
+                <name>words</name>
+                <type>java.lang.String[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>lemmatizeWithDictionary</name>
+            <comment>Lemmatizes a word using the lexical database, with fall-back to offline mode
+ if dictionary lookup fails
+word: word to analyze
+Return type: @return:lemmata of word</comment>
+            <returntype>java.util.List</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>analyzeWithDictionary</name>
+            <comment>Returns morphological analyses of a given word using the lexical database,
+ falling back to rule based analysis if lexical database lookup fails
+word: word to analyse
+Return type: @return:possible analyses</comment>
+            <returntype>java.util.List</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>generate</name>
+            <comment>Generates all possible morphological forms of the given word
+word: word
+wordclass: wordclass
+options: options
+Return type: @return:all morphological forms</comment>
+            <returntype>java.util.List</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>wordclass</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>options</name>
+                <type>java.lang.String[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>stem</name>
+            <comment>Stems a word
+ &lt;p&gt;
+ Removes all endings from a word
+ &lt;br/&gt;&lt;br/&gt;
+ &lt;b&gt;The word stem is not equivalent to the word lemma!&lt;/b&gt;
+word: word to stem
+Return type: @return:word stem</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>word</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.0</version>
+</root>
